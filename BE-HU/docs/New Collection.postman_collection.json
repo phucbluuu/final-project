@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "b72a9b9a-f913-400e-8dfd-6444b289c504",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17890593",
+		"_collection_link": "https://web.postman.co/workspace/Team-Workspace~392c3b8e-e9cd-41e0-885d-b00bdc8df165/collection/17890593-b72a9b9a-f913-400e-8dfd-6444b289c504?action=share&source=collection_link&creator=17890593"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"admin@shop.com\",\n    \"password\":\"admin123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/customer/login"
+			},
+			"response": []
+		},
+		{
+			"name": "get customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHNob3AuY29tIiwiX2lkIjoiNjYxMmFiNzQ0MjVjZGVlYWRlOGQxNjRmIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzEyNTAwMjIwLCJleHAiOjE3MTUwOTIyMjB9.Scts7oDtlokeUriut1VDaObL8B4Pl9fbLYccW2-mHbo"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": "http://localhost:8009/getAllCustomer"
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHNob3AuY29tIiwiX2lkIjoiNjYxNTUyN2IxM2EwNWE0MGFiOGUwNWY0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzEyNjczNDExLCJleHAiOjE3MTUyNjU0MTF9.pRXRt5T8Tm0bixR5R1ZXpjC2oe5YCyzqvHoKlGYyB1o"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"pastry3\",\n    \"desc\":\"desc\",\n    \"type\":\"pastry\",\n    \"unit\":12,\n    \"price\":10000,\n    \"available\":true,\n    \"suplier\":\"abc\",\n    \"banner\":\"https://res.cloudinary.com/dpx8nlanu/image/upload/v1712678349/images/Ảnh_màn_hình_2024-04-08_lúc_20.47.22_wckcgd.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/product/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"create"
+					],
+					"query": [
+						{
+							"key": "league",
+							"value": "MLB",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHNob3AuY29tIiwiX2lkIjoiNjYxNGMwMDE5YTJjNjBkMGUwZjY2ZWYxIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzEyNjcyMDQzLCJleHAiOjE3MTUyNjQwNDN9.mY_e-UcviCIAjMiJ_lSGRVp5czL4mjgiK7J3QxpwIdA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/shopping/getAllOrders"
+			},
+			"response": []
+		}
+	]
+}
